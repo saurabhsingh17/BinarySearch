@@ -4,21 +4,18 @@ public class BinarySearchAlgorithm {
         int element = 2;
         System.out.println(binarySearch(nums, element));
     }
-    static int binarySearch(int[] arr, int element){
+
+    static int binarySearch(int[] arr, int element) {
         int start = 0;
-        int end = arr.length-1;
-        while(start <= end) {
-            int mid = start + (end - start)/2;
+        int end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
             if (element == arr[mid]) {
                 return mid;
-            }
-            else if (element > arr[mid]){
+            } else if (element > arr[mid]) {
                 start = mid + 1;
-                continue;
-            }
-            else {
+            } else {
                 end = mid - 1;
-                continue;
             }
         }
         return -1;
