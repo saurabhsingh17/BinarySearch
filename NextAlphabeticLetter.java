@@ -3,18 +3,17 @@ public class NextAlphabeticLetter {
         int start = 0;
         int end = letters.length - 1;
         char res = letters[0];
-        while(start <= end) {
-            int mid = start + (end - start)/2;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
 
-            if(letters[mid] == target) {
+            if (letters[mid] == target) {
                 start = mid + 1;
             }
-
-            if(letters[mid]-'a' > target-'a'){
+            if (letters[mid] > target) {
                 res = letters[mid];
                 end = mid - 1;
             }
-            if(letters[mid] - 'a' < target - 'a'){
+            if (letters[mid] < target) {
                 start = mid + 1;
             }
         }
